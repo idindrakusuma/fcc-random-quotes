@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Random Quotes for FreeCodeCamp Projects`,
+    description: `an web for complete take home project from FreeCodeCamp`,
+    author: `@idindrakusuma`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -19,8 +19,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Random Quotes for FreeCodeCamp Projects`,
+        short_name: `Random Quotes`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
