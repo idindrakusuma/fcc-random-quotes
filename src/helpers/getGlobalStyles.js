@@ -11,6 +11,10 @@ export const getGlobalStyles = (color) => css`
   transition: opacity 0.5s ease-in;
   opacity: 1;
 
+  button {
+    background-color: ${color} !important;
+  }
+
   .content {
     width: 100%;
   }
