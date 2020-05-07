@@ -1,21 +1,42 @@
-import React from "react"
-import { Link } from "gatsby"
+import React, { useState } from 'react';
+/**
+ * List of Components
+ */
+import Global from '../components/Global';
+import QuoteCard from '../components/QuoteCard';
+/**
+ * List of helpers
+ */
+import getRandomColor from '../helpers/getRandomColor';
+import { getGlobalStyles } from '../helpers/getGlobalStyles';
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+function IndexPage() {
+  const [selectedColor, setSelectedColor] = useState(() => getRandomColor());
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
+  const handleGetNewColor = () => {
+    let newColor = getRandomColor();
+    /**
+     * IF current colors still same like existing,
+     * then generate again!
+     */
+    while (newColor === selectedColor) {
+      newColor = getRandomColor();
+    }
+
+    setSelectedColor(newColor);
+  };
+
+  return (
+    <div css={getGlobalStyles(selectedColor)}>
+      <Global />
+      <div className="content">
+        <QuoteCard />
+      </div>
+      <div className="footer">
+        <span onClick={handleGetNewColor}>Built with Gatsby | Created by Indra Kusuma</span>
+      </div>
     </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+  );
+}
 
-export default IndexPage
+export default IndexPage;
